@@ -49,14 +49,14 @@ const PlayerSound = forwardRef<PlayerSoundRef>((_, ref) => {
   return (
     <>
       <audio ref={audioRef} loop preload="auto">
-        <source src="/audios/lelett.mp3" type="audio/mp3" />
+        <source src="/audios/mabrouk.mp3" type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
 
       <button
         onClick={toggleMusic}
         aria-label={isPlaying ? "Pause music" : "Play music"}
-        className="fixed bottom-10 left-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-wine-deep text-beige md:left-6 lg:h-12 lg:w-12"
+        className="fixed bottom-10 left-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-peach text-cream md:left-6 lg:h-12 lg:w-12"
       >
         {isPlaying ? <Pause className="h-4 w-4 lg:h-6 lg:w-6" /> : <Music2 className="h-4 w-4 lg:h-6 lg:w-6" />}
       </button>

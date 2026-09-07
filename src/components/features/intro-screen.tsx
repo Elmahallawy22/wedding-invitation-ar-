@@ -50,9 +50,9 @@ export default function IntroScreen({ children, onOpen }: IntroScreenProps) {
               initial={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-              className="absolute top-0 left-0 right-0 h-1/2 bg-wine flex items-end justify-center "
+              className="absolute top-0 left-0 right-0 h-1/2 bg-ink flex items-end justify-center "
             >
-              <h1 className="text-beige font-arabic text-4xl md:text-6xl mb-16">يوسف</h1>
+              <h1 className="text-cream font-arabic text-4xl md:text-6xl mb-16">يوسف</h1>
             </motion.div>
             {/* the bottom panel */}
             <motion.div
@@ -60,9 +60,9 @@ export default function IntroScreen({ children, onOpen }: IntroScreenProps) {
               initial={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-              className="absolute bottom-0 left-0 right-0 h-1/2 bg-wine flex justify-center "
+              className="absolute bottom-0 left-0 right-0 h-1/2 bg-ink flex justify-center "
             >
-              <h1 className="text-beige font-arabic text-4xl md:text-6xl mt-12">هنا</h1>
+              <h1 className="text-cream font-arabic text-4xl md:text-6xl mt-12">هنا</h1>
             </motion.div>
 
             <motion.div
@@ -91,7 +91,7 @@ export default function IntroScreen({ children, onOpen }: IntroScreenProps) {
                 >
                   <path
                     d="M12 21s-7-4.5-9.5-9C.8 8.5 2.6 4 6.5 4 9 4 10.5 5.5 12 7c1.5-1.5 3-3 5.5-3 3.9 0 5.7 4.5 4 8-2.5 4.5-9.5 9-9.5 9z"
-                    fill="rgba(255,238,225,0.3)"
+                    fill="#333333"
                     stroke="#fff"
                   ></path>
                 </svg>

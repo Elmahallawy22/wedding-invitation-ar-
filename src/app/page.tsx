@@ -1,10 +1,11 @@
 import InvitationShell from "@/components/features/invitation-shell";
+import HeroSection from "@/components/sections/hero-section";
 
 export default function Home() {
   return (
     <InvitationShell>
       <main>
-        <div className="text-5xl text-wine">Hello, World!</div>
+        <HeroSection />
       </main>
     </InvitationShell>
   );
