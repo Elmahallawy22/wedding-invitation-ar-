@@ -1,10 +1,11 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 type IntroScreenProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   onOpen?: () => Promise<void> | void;
   onExitComplete?: () => void;
 };
