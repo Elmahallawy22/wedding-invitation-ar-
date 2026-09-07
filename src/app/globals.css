@@ -32,3 +32,6 @@ body {
   font-family: var(--font-serif);
 }
 
+html {
+  scroll-behavior: smooth;
+}

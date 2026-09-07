@@ -42,9 +42,12 @@ export default function HeroSection() {
               </div>
             </Reveal>
             <Reveal delay={1.2} duration={2.7}>
-              <button className="bg-ink text-cream py-2.5 md:py-3 px-5 md:px-8 rounded-full font-semibold flex gap-3 animate-pulse">
+              <a
+                href="#poster"
+                className="bg-ink text-cream py-2.5 md:py-3 px-5 md:px-8 rounded-full font-semibold flex gap-3 animate-pulse"
+              >
                 احفظ التاريخ <MoveLeft className="w-4" />
-              </button>
+              </a>
             </Reveal>
           </div>
           <MotionImage value={-100} className="hidden lg:block">
