@@ -62,9 +62,11 @@ export default function IntroScreen({ children, onOpen, onExitComplete }: IntroS
               initial={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-              className="absolute bottom-0 left-0 right-0 h-1/2 bg-ink flex justify-center "
+              className="absolute bottom-0 left-0 right-0 h-1/2 bg-ink flex flex-col  justify-between"
             >
-              <h1 className="text-cream font-arabic text-4xl md:text-6xl mt-12">هنا</h1>
+              <h1 className="text-cream font-arabic text-4xl md:text-6xl mt-12 text-center">هنا</h1>
+              <p className="text-cream text-center text-2xl animate-pulse">دوس على القلب</p>
+              <p></p>
             </motion.div>
 
             <motion.div

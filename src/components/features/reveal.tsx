@@ -10,7 +10,7 @@ interface RevealProps {
   y?: number;
 }
 
-export default function Reveal({ children, className, delay = 0.3, duration = 1, y = 40 }: RevealProps) {
+export default function Reveal({ children, className, delay = 0.3, duration = 1.5, y = 40 }: RevealProps) {
   return (
     <motion.div
       className={className}
