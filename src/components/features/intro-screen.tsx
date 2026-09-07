@@ -6,9 +6,10 @@ import { AnimatePresence, motion } from "motion/react";
 type IntroScreenProps = {
   children: React.ReactNode;
   onOpen?: () => Promise<void> | void;
+  onExitComplete?: () => void;
 };
 
-export default function IntroScreen({ children, onOpen }: IntroScreenProps) {
+export default function IntroScreen({ children, onOpen, onExitComplete }: IntroScreenProps) {
   const [showIntro, setShowIntro] = useState(true);
   const [isOpening, setIsOpening] = useState(false);
 
@@ -36,7 +37,7 @@ export default function IntroScreen({ children, onOpen }: IntroScreenProps) {
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={onExitComplete}>
         {showIntro && (
           <motion.div
             key="intro-container"

@@ -1,3 +1,6 @@
+"use client";
+
+import { useInvitationOpen } from "../providers/invitation-state";
 import { MoveDownIcon, MoveLeft } from "lucide-react";
 import Image from "next/image";
 import Reveal from "../features/reveal";
@@ -5,6 +8,14 @@ import RevealAppear from "../features/reveal-appear";
 import MotionImage from "../features/motion-image";
 
 export default function HeroSection() {
+  // Check if the invitation is open
+  const isInvitationOpen = useInvitationOpen();
+
+  // If the invitation is not open, render a placeholder section
+  if (!isInvitationOpen) {
+    return <section className="min-h-screen bg-gradient-dawn" />;
+  }
+
   return (
     <section className="min-h-screen bg-gradient-dawn flex justify-center  overflow-x-hidden">
       <div className="container flex flex-col items-center justify-between pt-2 md:pt-10 pb-16 md:pb-24 lg:pb-12!">
