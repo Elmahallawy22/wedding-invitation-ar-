@@ -9,6 +9,7 @@ export default function HallSection() {
       style={{ backgroundImage: "url('/assets/hall.png')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="container flex flex-col items-center justify-center gap-5 ">
+        <div className="h-5" />
         <Reveal>
           <h3 className="text-5xl md:text-7xl font-arabic leading-16 md:leading-24">تحت ضوء قمرٍ</h3>
         </Reveal>

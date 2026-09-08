@@ -85,7 +85,7 @@ export default function ContactSection() {
                   toast("ياعم عيب عليك ! 😥", {
                     description: "أنت كدا كدا هتنورنا يا صاحبي مفيهاش كلام 😍😊",
                     className: "!bg-peach !text-cream !border-none font-arabic !text-3xl md:!text-4xl !font-semibold cursor-pointer",
-                    descriptionClassName: "text-2xl",
+                    descriptionClassName: "!text-cream text-2xl",
                   })
                 }
                 className="w-20 pt-3 pb-2 text-lg font-semibold bg-[#111111] border border-[#ffffff1f] rounded-full cursor-pointer"
