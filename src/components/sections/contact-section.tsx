@@ -11,8 +11,27 @@ export default function ContactSection() {
   const [message, setMessage] = useState("");
   const [attending, setAttending] = useState(false);
 
-  const sendMessage = (e: React.FormEvent<HTMLFormElement>): void => {
+  const sendMessage = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+
+    // Validation
+    if (!name.trim()) {
+      toast("من فضلك اكتب اسمك ❤️", {
+        position: "top-right",
+        className: "!bg-peach !text-cream !border-none font-arabic !text-2xl md:!text-3xl !font-semibold",
+      });
+
+      return;
+    }
+
+    if (!message.trim()) {
+      toast("من فضلك اكتب رسالتك ❤️", {
+        position: "top-right",
+        className: "!bg-peach !text-cream !border-none font-arabic !text-2xl md:!text-3xl !font-semibold",
+      });
+
+      return;
+    }
 
     fetch("https://sendmail-api-docs.vercel.app/api/send", {
       method: "POST",
@@ -24,6 +43,12 @@ export default function ContactSection() {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+
+    // Show massege for submitting..
+    toast("تم الارسال 👌👍❤️", {
+      position: "top-right",
+      className: "!bg-peach !text-cream !border-none font-arabic !text-3xl md:!text-4xl !font-semibold cursor-pointer",
+    });
 
     setName("");
     setMessage("");
@@ -96,16 +121,7 @@ export default function ContactSection() {
           </Reveal>
 
           <Reveal>
-            <button
-              onClick={() => {
-                toast("تم الارسال 👌👍❤️", {
-                  position: "top-right",
-                  className: "!bg-peach !text-cream !border-none font-arabic !text-3xl md:!text-4xl !font-semibold cursor-pointer",
-                });
-              }}
-              type="submit"
-              className="bg-[#ffffff1a] py-3 px-8 text-xl rounded-full mt-5 cursor-pointer flex items-center gap-2"
-            >
+            <button type="submit" className="bg-[#ffffff1a] py-3 px-8 text-xl rounded-full mt-5 cursor-pointer flex items-center gap-2">
               أرسل بكل حب <MoveLeft width={16} />
             </button>
           </Reveal>

@@ -13,10 +13,44 @@ export default function InvitationShell({ children }: { children: ReactNode }) {
   const handleOpen = async () => {
     await playerRef.current?.playMusic();
   };
+  // 
+  const handleIntroExitComplete = () => {
+    setIsInvitationOpen(true);
+
+    let animationId: number;
+    let isAutoScrolling = true;
+
+    const autoScroll = () => {
+      if (!isAutoScrolling) return;
+
+      window.scrollBy(0, 1.5);
+
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+      if (!isAtBottom) {
+        animationId = requestAnimationFrame(autoScroll);
+      }
+    };
+
+    const stopAutoScroll = () => {
+      isAutoScrolling = false;
+      cancelAnimationFrame(animationId);
+
+      window.removeEventListener("touchstart", stopAutoScroll);
+      window.removeEventListener("wheel", stopAutoScroll);
+    };
+
+    // Stop auto-scroll when user interacts
+    window.addEventListener("touchstart", stopAutoScroll, { once: true });
+    window.addEventListener("wheel", stopAutoScroll, { once: true });
+
+    // Start auto-scroll
+    animationId = requestAnimationFrame(autoScroll);
+  };
 
   return (
     <InvitationOpenProvider value={isInvitationOpen}>
-      <IntroScreen onOpen={handleOpen} onExitComplete={() => setIsInvitationOpen(true)}>
+      <IntroScreen onOpen={handleOpen} onExitComplete={handleIntroExitComplete}>
         <PlayerSound ref={playerRef} />
         {children}
       </IntroScreen>
