@@ -23,7 +23,7 @@ export default function InvitationShell({ children }: { children: ReactNode }) {
     const autoScroll = () => {
       if (!isAutoScrolling) return;
 
-      window.scrollBy(0, 15);
+      window.scrollBy(0, 30);
 
       const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
 
